@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="inlineTagsExam" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NKJ-Pb-apq" customClass="MyTagListView" customModule="inlineTagsExam" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="144" width="414" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="GUo-0G-P08"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="EnI-GD-x32" customClass="AlignedCollectionViewFlowLayout" customModule="AlignedCollectionViewFlowLayout">
+                                    <size key="itemSize" width="128" height="40"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="8" minY="8" maxX="8" maxY="8"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TestCell" id="f58-TB-gdj" customClass="TagCell" customModule="inlineTagsExam" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="8" width="52" height="32"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="5Ot-dl-hSR">
+                                            <rect key="frame" x="0.0" y="0.0" width="52" height="32"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vue-EG-q7R">
+                                                    <rect key="frame" x="2" y="4" width="48" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <color key="textColor" systemColor="systemGrayColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="vue-EG-q7R" firstAttribute="top" secondItem="5Ot-dl-hSR" secondAttribute="top" constant="4" id="EU1-o4-gbm"/>
+                                                <constraint firstAttribute="bottom" secondItem="vue-EG-q7R" secondAttribute="bottom" constant="4" id="FLy-mg-8eb"/>
+                                                <constraint firstAttribute="trailing" secondItem="vue-EG-q7R" secondAttribute="trailing" constant="2" id="InR-tc-LAu"/>
+                                                <constraint firstItem="vue-EG-q7R" firstAttribute="leading" secondItem="5Ot-dl-hSR" secondAttribute="leading" constant="2" id="zId-Xj-orG"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="lbName" destination="vue-EG-q7R" id="ezv-IC-wDt"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ocm-5k-Mwo">
+                                <rect key="frame" x="20" y="64" width="374" height="60"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="VjI-qK-A7K"/>
+                                </constraints>
+                                <state key="normal" title="토글">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dyO-qZ-bdl"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="NKJ-Pb-apq" firstAttribute="top" secondItem="Ocm-5k-Mwo" secondAttribute="bottom" constant="20" id="AHe-nf-4YN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ocm-5k-Mwo" secondAttribute="trailing" constant="20" id="BoJ-Nd-ONF"/>
+                            <constraint firstItem="Ocm-5k-Mwo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="LeU-9C-c63"/>
+                            <constraint firstItem="Ocm-5k-Mwo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Owu-1N-Bin"/>
+                            <constraint firstItem="NKJ-Pb-apq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="l0A-4S-VTk"/>
+                            <constraint firstItem="NKJ-Pb-apq" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="trF-cl-uN5"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="ctrtCollectionViewHeight" destination="GUo-0G-P08" id="K1z-Dc-V0E"/>
+                        <outlet property="myTagListView" destination="NKJ-Pb-apq" id="8zF-tf-FUD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="110.49107142857143"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGroupedBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
